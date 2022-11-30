@@ -7,14 +7,14 @@ which curl &> /dev/null || apt-get update && apt-get install -y curl
 
 echo "Installing Foundry toolkit"
 
-arch=$(uname -i)
-if [[ $arch == x86_64* ]]; then
-    arch="amd64"
-elif [[ $arch == aarch64* ]]; then
-    arch="arm64"
+arch=$(uname -m)
+if [[ $arch == "x86_64" ]]; then
+  arch="amd64"
+elif [[ $arch == "aarch64" ]]; then
+  arch="arm64"
 else
-    echo "Unsupported architecture: $arch"
-    exit 1
+  echo "Unsupported architecture: $arch"
+  exit 1
 fi
 
 curl -L https://github.com/foundry-rs/foundry/releases/download/nightly/foundry_nightly_linux_$arch.tar.gz --output foundry-nightly.tar.gz
