@@ -1,0 +1,8 @@
+{
+    "name": "Foundry (ethereum)",
+    "id": "foundry",
+    "version": "1.0.0",
+    "description": "The Foundry toolkit for Ethereum smart contract development",
+    "options": {
+    }
+}
